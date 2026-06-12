@@ -12,10 +12,10 @@ app.use(cors());
 
 app.use("/api", chatRoutes);
 
-app.listen(PORT, () => {
-    console.log(`server running on PORT ${PORT}`);
-    connectDB();
-});
+// app.listen(PORT, () => {
+//     console.log(`server running on PORT ${PORT}`);
+//     connectDB();
+// });
 
 const connectDB = async () => {
     try {
