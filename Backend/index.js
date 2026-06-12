@@ -26,6 +26,17 @@ const connectDB = async () => {
     }
 };
 
+let isConnected = false;
+app.use(async (req, res, next) => {
+    if (!isConnected) {
+        await connectDB();
+        isConnected = true;
+    }
+    next();
+});
+
+export default app;
+
 // app.post("/test", async (req, res) => {
 //     const options = {
 //         method: "POST",
